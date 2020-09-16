@@ -1,19 +1,78 @@
 require_relative 'Jugador'
 require_relative 'Equipo'
 require_relative 'Nivel'
+require_relative 'JSON_extract'
+require 'json'
 
-nivel_A = Nivel.new("A", 5)
-nivel_B = Nivel.new("B", 10)
-nivel_C = Nivel.new("C", 15)
-nivel_Cuauh = Nivel.new("Cuauh", 20)
+include JSON_extract
 
-equipo_azul = Equipo.new("azul")
-equipo_rojo = Equipo.new("rojo")
+json_string = '
+    {
+        "jugadores" : [  
+           {  
+              "nombre":"Juan Perez",
+              "nivel":"C",
+              "goles":10,
+              "sueldo":50000,
+              "bono":25000,
+              "sueldo_completo":null,
+              "equipo":"rojo"
+           },
+           {  
+              "nombre":"EL Cuauh",
+              "nivel":"Cuauh",
+              "goles":30,
+              "sueldo":100000,
+              "bono":30000,
+              "sueldo_completo":null,
+              "equipo":"azul"
+           },
+           {  
+              "nombre":"Cosme Fulanito",
+              "nivel":"A",
+              "goles":7,
+              "sueldo":20000,
+              "bono":10000,
+              "sueldo_completo":null,
+              "equipo":"azul"
+     
+           },
+           {  
+              "nombre":"El Rulo",
+              "nivel":"B",
+              "goles":9,
+              "sueldo":30000,
+              "bono":15000,
+              "sueldo_completo":null,
+              "equipo":"rojo"
+     
+           }
+        ]
+     }'
 
-jugador_elrulo = Jugador.new("El Rulo", nivel_B, 9, 30000, 15000, equipo_rojo)
-jugador_juan = Jugador.new("Juan Pérez", nivel_C, 10, 50000, 25000, equipo_rojo)
+parsed = JSON.parse(json_string)
+jugadores_JSON = parsed["jugadores"]
+equipos = Array.new
 
-equipo_rojo.add_player(jugador_elrulo)
-equipo_rojo.add_player(jugador_juan)
+for jugador in jugadores_JSON
+    equipo_obtenido = Equipo.new(jugador["equipo"])
+    nombre_equipo = equipo_obtenido.nombre
+    jugador_obtenido = Jugador.new(jugador["nombre"], jugador["goles"], jugador["sueldo"], jugador["bono"])
+    nivel = jugador["nivel"]
+    jugador_obtenido.nivel(JSON_extract.find_nivel(nivel))
 
-puts jugador_elrulo.get_total_payment
+    equipo = equipos.find{|equipo| equipo.nombre == nombre_equipo}
+
+    # Si el equipo ya esta en el array: se agrega el jugador al equipo | se sustituye el equipo 
+    # del array con el mas reciente
+    if equipo
+        equipo.add_player(jugador_obtenido)
+        equipos[equipos.index(equipo)] = equipo
+    #Si no esta en el array: al equipo obtenido del JSON se le agrega el jugador | se agrega 
+    #el equipo al array
+    else
+        equipo_obtenido.add_player(jugador_obtenido)
+        equipos.push(equipo_obtenido)
+    end
+end
+

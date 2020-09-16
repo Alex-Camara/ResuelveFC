@@ -11,7 +11,7 @@ class Equipo
         @jugadores.push(player)
     end
 
-    def get_team_bono
+    def get_team_bono_percentage
         total_goals = 0
         total_minimal_goals = 0
         for player in @jugadores
