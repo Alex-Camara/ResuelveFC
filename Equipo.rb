@@ -7,6 +7,12 @@ class Equipo
         @jugadores = Array.new
     end
 
+    def to_json
+        @jugadores.map do |jugador|
+            jugador.to_hash
+        end.to_json
+    end
+
     def add_player(player)
         @jugadores.push(player)
     end

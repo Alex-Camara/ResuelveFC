@@ -2,8 +2,6 @@ require_relative 'Jugador'
 require_relative 'Equipo'
 require_relative 'Nivel'
 require_relative 'JSON_extract'
-require 'json'
-
 include JSON_extract
 
 json_string = '
@@ -50,29 +48,8 @@ json_string = '
         ]
      }'
 
-parsed = JSON.parse(json_string)
-jugadores_JSON = parsed["jugadores"]
-equipos = Array.new
+equipos = JSON_extract.find_teams_and_players(json_string)
 
-for jugador in jugadores_JSON
-    equipo_obtenido = Equipo.new(jugador["equipo"])
-    nombre_equipo = equipo_obtenido.nombre
-    jugador_obtenido = Jugador.new(jugador["nombre"], jugador["goles"], jugador["sueldo"], jugador["bono"])
-    nivel = jugador["nivel"]
-    jugador_obtenido.nivel(JSON_extract.find_nivel(nivel))
+JSON_extract.get_players_total_payment(equipos)
 
-    equipo = equipos.find{|equipo| equipo.nombre == nombre_equipo}
-
-    # Si el equipo ya esta en el array: se agrega el jugador al equipo | se sustituye el equipo 
-    # del array con el mas reciente
-    if equipo
-        equipo.add_player(jugador_obtenido)
-        equipos[equipos.index(equipo)] = equipo
-    #Si no esta en el array: al equipo obtenido del JSON se le agrega el jugador | se agrega 
-    #el equipo al array
-    else
-        equipo_obtenido.add_player(jugador_obtenido)
-        equipos.push(equipo_obtenido)
-    end
-end
-
+JSON_extract.get_final_json(equipos)
