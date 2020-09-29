@@ -1,8 +1,15 @@
 require 'test/unit'
 require_relative '../classes/Jugador'
 require_relative '../classes/Equipo'
+require_relative '../classes/Nivel'
 
 class TestJugador < Test::Unit::TestCase
+    def setup
+        @nivel_A = Nivel.new("A", 5)
+        @nivel_B = Nivel.new("B", 10)
+        @nivel_C = Nivel.new("C", 15)
+        @nivel_Cuauh = Nivel.new("Cuauh", 20)
+    end
 
     def test_initialize_formato_nombre_incorrecto
         nombre = 233
@@ -100,12 +107,30 @@ class TestJugador < Test::Unit::TestCase
         end
     end
 
-    def test_jugador_porcentaje_individual
+    def test_get_jugador_porcentaje_individual
         nombre = "Juan Perez"
-        goles = 10
-        sueldo = 25000
-        bono = ""
+        goles = 19
+        sueldo = 50000
+        bono = 10000
         equipo = Equipo.new("Equipo de prueba")
+        jugador = Jugador.new(nombre, goles, sueldo, bono, equipo)
+
+        jugador.nivel = @nivel_Cuauh
+
+        assert_equal 95, jugador.get_individual_bono_percentage
     end
 
+    def test_get_team_bono
+        nombre = "Juan Perez"
+        goles = 19
+        sueldo = 50000
+        bono = 10000
+        equipo = Equipo.new("Equipo de prueba")
+        jugador = Jugador.new(nombre, goles, sueldo, bono, equipo)
+        bono_equipo = 96
+
+        jugador.nivel = @nivel_Cuauh
+
+        assert_equal 59550.0, jugador.get_total_payment(bono_equipo)
+    end
 end
