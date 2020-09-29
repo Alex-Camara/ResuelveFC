@@ -3,6 +3,7 @@ class Equipo
     attr_accessor :jugadores 
 
     def initialize(nombre)
+        raise ArgumentError.new "El equipo debe tener un nombre..." unless not nombre.empty?
         @nombre = nombre
         @jugadores = Array.new
     end

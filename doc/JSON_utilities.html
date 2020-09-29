@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module JSON_utilities - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-find_nivel">#find_nivel</a>
+    
+    <li ><a href="#method-i-find_teams_and_players">#find_teams_and_players</a>
+    
+    <li ><a href="#method-i-get_final_json">#get_final_json</a>
+    
+    <li ><a href="#method-i-get_players_total_payment">#get_players_total_payment</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-JSON_utilities">
+  <h1 id="module-JSON_utilities" class="module">
+    module JSON_utilities
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-find_nivel" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_nivel</span><span
+            class="method-args">(nivel)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param [Nivel] nivel:</p>
+          
+          
+
+          
+          <div class="method-source-code" id="find_nivel-source">
+            <pre><span class="ruby-comment"># File JSON_utilities.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">find_nivel</span>(<span class="ruby-identifier">nivel</span>)
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">nivel</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;A&quot;</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@nivel_A</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;B&quot;</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@nivel_B</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;C&quot;</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@nivel_C</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Cuauh&quot;</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@nivel_Cuauh</span>
+    <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@nivel_A</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-find_teams_and_players" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_teams_and_players</span><span
+            class="method-args">(json)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="find_teams_and_players-source">
+            <pre><span class="ruby-comment"># File JSON_utilities.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">find_teams_and_players</span>(<span class="ruby-identifier">json</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">json</span>.<span class="ruby-identifier">empty?</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span> <span class="ruby-string">&quot;Debes ingresar un json...&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">begin</span>
+        <span class="ruby-identifier">parsed</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">json</span>)
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">JSON</span><span class="ruby-operator">::</span><span class="ruby-constant">ParserError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">error</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;error al convertir el input a json&quot;</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">JSON</span><span class="ruby-operator">::</span><span class="ruby-constant">ParserError</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">jugadores_JSON</span> = <span class="ruby-identifier">parsed</span>[<span class="ruby-string">&quot;jugadores&quot;</span>]
+
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">jugadores_JSON</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">jugador</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">jugadores_JSON</span>
+            <span class="ruby-identifier">equipo_obtenido</span> = <span class="ruby-constant">Equipo</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jugador</span>[<span class="ruby-string">&quot;equipo&quot;</span>])
+            <span class="ruby-identifier">nombre_equipo</span> = <span class="ruby-identifier">equipo_obtenido</span>.<span class="ruby-identifier">nombre</span>
+            <span class="ruby-identifier">jugador_obtenido</span> = <span class="ruby-constant">Jugador</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">jugador</span>[<span class="ruby-string">&quot;nombre&quot;</span>], <span class="ruby-identifier">jugador</span>[<span class="ruby-string">&quot;goles&quot;</span>], <span class="ruby-identifier">jugador</span>[<span class="ruby-string">&quot;sueldo&quot;</span>], <span class="ruby-identifier">jugador</span>[<span class="ruby-string">&quot;bono&quot;</span>], <span class="ruby-identifier">equipo_obtenido</span>)
+            <span class="ruby-identifier">nivel</span> = <span class="ruby-identifier">find_nivel</span>(<span class="ruby-identifier">jugador</span>[<span class="ruby-string">&quot;nivel&quot;</span>])
+            <span class="ruby-identifier">jugador_obtenido</span>.<span class="ruby-identifier">nivel</span> = <span class="ruby-identifier">nivel</span>
+            
+            <span class="ruby-identifier">equipo</span> = <span class="ruby-ivar">@equipos</span>.<span class="ruby-identifier">find</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">equipo</span><span class="ruby-operator">|</span> <span class="ruby-identifier">equipo</span>.<span class="ruby-identifier">nombre</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">nombre_equipo</span>}
+        
+            <span class="ruby-comment"># Si el equipo ya esta en el array: se agrega el jugador al equipo | se sustituye el equipo</span>
+            <span class="ruby-comment"># del array con el mas reciente</span>
+            <span class="ruby-keyword">if</span> <span class="ruby-identifier">equipo</span>
+                <span class="ruby-identifier">equipo</span>.<span class="ruby-identifier">add_player</span>(<span class="ruby-identifier">jugador_obtenido</span>)
+                <span class="ruby-ivar">@equipos</span>[<span class="ruby-ivar">@equipos</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">equipo</span>)] = <span class="ruby-identifier">equipo</span>
+            <span class="ruby-comment">#Si no esta en el array: al equipo obtenido del JSON se le agrega el jugador | se agrega</span>
+            <span class="ruby-comment">#el equipo al array</span>
+            <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">equipo_obtenido</span>.<span class="ruby-identifier">add_player</span>(<span class="ruby-identifier">jugador_obtenido</span>)
+                <span class="ruby-ivar">@equipos</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">equipo_obtenido</span>)
+            <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-ivar">@equipos</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_final_json" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_final_json</span><span
+            class="method-args">(equipos)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_final_json-source">
+            <pre><span class="ruby-comment"># File JSON_utilities.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_final_json</span>(<span class="ruby-identifier">equipos</span>)
+    <span class="ruby-identifier">jugadores_totales</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">equipo</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">equipos</span>
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">jugador</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">equipo</span>.<span class="ruby-identifier">jugadores</span>
+            <span class="ruby-identifier">jugadores_totales</span>.<span class="ruby-identifier">append</span>(<span class="ruby-identifier">jugador</span>)
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">jugadores_totales_JSON</span> = {
+        <span class="ruby-string">&quot;jugadores&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">jugadores_totales</span>
+    } 
+
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">jugadores_totales_JSON</span>.<span class="ruby-identifier">to_json</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_players_total_payment" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_players_total_payment</span><span
+            class="method-args">(equipos)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_players_total_payment-source">
+            <pre><span class="ruby-comment"># File JSON_utilities.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_players_total_payment</span>(<span class="ruby-identifier">equipos</span>)
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">equipo</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">equipos</span>
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">jugador</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">equipo</span>.<span class="ruby-identifier">jugadores</span>
+            <span class="ruby-identifier">jugador</span>.<span class="ruby-identifier">get_total_payment</span>(<span class="ruby-identifier">equipo</span>.<span class="ruby-identifier">get_team_bono_percentage</span>())
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
