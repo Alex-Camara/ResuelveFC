@@ -107,7 +107,7 @@ class TestJugador < Test::Unit::TestCase
         end
     end
 
-    def test_get_jugador_porcentaje_individual
+    def test_get_porcentaje_bono_individual
         nombre = "Juan Perez"
         goles = 19
         sueldo = 50000
@@ -120,7 +120,7 @@ class TestJugador < Test::Unit::TestCase
         assert_equal 95, jugador.get_individual_bono_percentage
     end
 
-    def test_get_team_bono
+    def test_get_pago_total
         nombre = "Juan Perez"
         goles = 19
         sueldo = 50000

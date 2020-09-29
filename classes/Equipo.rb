@@ -3,7 +3,7 @@ class Equipo
     attr_accessor :jugadores 
 
     def initialize(nombre)
-        raise ArgumentError.new "El equipo debe tener un nombre..." unless not nombre.empty?
+        raise ArgumentError.new "El equipo debe tener un nombre..." unless nombre.is_a?(String) && !nombre.empty?
         @nombre = nombre
         @jugadores = Array.new
     end
@@ -18,6 +18,8 @@ class Equipo
         @jugadores.push(player)
     end
 
+    #This percentage is obtained by the correlation between the total minimal goals in each player
+    #level and the total actual goals made by the players.
     def get_team_bono_percentage
         total_goals = 0
         total_minimal_goals = 0
