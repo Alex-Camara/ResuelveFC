@@ -18,6 +18,12 @@ class Equipo
         @jugadores.push(player)
     end
 
+    def add_players(players)
+        for player in players
+            @jugadores.push(player)
+        end
+    end
+
     #This percentage is obtained by the correlation between the total minimal goals in each player
     #level and the total actual goals made by the players.
     def get_team_bono_percentage

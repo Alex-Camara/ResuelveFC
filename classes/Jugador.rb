@@ -1,7 +1,7 @@
 class Jugador
     attr_accessor :nombre, :goles, :nivel, :sueldo_completo
 
-    def initialize(nombre, goles, sueldo, bono, equipo)
+    def initialize(nombre, goles, sueldo, bono, equipo, nivel)
         raise ArgumentError.new "El jugador debe tener un nombre..." unless nombre.is_a?(String) && !nombre.empty?
         raise ArgumentError.new "los goles deben ser números enteros..." unless goles.is_a?(Integer)
         raise ArgumentError.new "solo se permiten números en el valor sueldo..." unless sueldo.is_a?(Integer) || sueldo.is_a?(Float)
@@ -12,6 +12,7 @@ class Jugador
         @sueldo = sueldo
         @bono = bono
         @equipo = equipo
+        @nivel = nivel unless nivel.nil?
     end
 
     def to_hash

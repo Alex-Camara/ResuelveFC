@@ -3,7 +3,7 @@ require_relative '../classes/Jugador'
 require_relative '../classes/Equipo'
 require_relative '../classes/Nivel'
 
-class TestJugador < Test::Unit::TestCase
+class Test_Jugador < Test::Unit::TestCase
     def setup
         @nivel_A = Nivel.new("A", 5)
         @nivel_B = Nivel.new("B", 10)

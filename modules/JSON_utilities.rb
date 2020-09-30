@@ -28,13 +28,17 @@ module JSON_utilities
     end
 
     def find_teams_and_players(json)
-        if json.empty?
+        begin
+            if json.empty?
+                raise ArgumentError.new "Debes ingresar un json..."
+            end
+        # When an integer, float, etc. is entered, te method empty will throw a NoMethodError
+        rescue NoMethodError
             raise ArgumentError.new "Debes ingresar un json..."
         end
         begin
             parsed = JSON.parse(json)
         rescue JSON::ParserError => error
-            puts "error al convertir el input a json"
             raise JSON::ParserError
         end
         jugadores_JSON = parsed["jugadores"]
@@ -43,10 +47,9 @@ module JSON_utilities
             for jugador in jugadores_JSON
                 equipo_obtenido = Equipo.new(jugador["equipo"])
                 nombre_equipo = equipo_obtenido.nombre
-                jugador_obtenido = Jugador.new(jugador["nombre"], jugador["goles"], jugador["sueldo"], jugador["bono"], equipo_obtenido)
                 nivel = find_nivel(jugador["nivel"])
-                jugador_obtenido.nivel = nivel
-                
+                jugador_obtenido = Jugador.new(jugador["nombre"], jugador["goles"], jugador["sueldo"], jugador["bono"], equipo_obtenido, nivel)
+  
                 equipo = @equipos.find{|equipo| equipo.nombre == nombre_equipo}
             
                 # Si el equipo ya esta en el array: se agrega el jugador al equipo | se sustituye el equipo 
