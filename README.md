@@ -27,15 +27,15 @@ The process performed by the program is detailed next:
 2. Afterwards, the program takes the input and converts it to a valid JSON, once that's done it proceeds to extract the football teams with the corresponding players from the JSON. **Note**: *If the input is not a valid JSON or the JSON is empty, the program will repeat the request until a valid JSON is provided.*
 3. The program then calculates the team bonus percentage given the following: 
 
-| Nivel        | Goles/Mes        
+| Nivel        | Goles/Mes  |
 | ------------- |:-------------:| 
 | A     | 5 |
 | B      | 10      |
 | C | 15      |
 | Cuauh | 20      |
 
-| Jugador        | Nivel | Goles anotados/ Goles requeridos        
-| ------------- |:-------------:| 
+| Jugador        | Nivel | Goles anotados/ Goles requeridos |     
+| ------------- |:-------------:| ------------- |
 | Juan     | A | 6/5 |
 | Pedro      | B | 7/10 | 
 | Martín | C  | 16/15 |
@@ -51,12 +51,12 @@ player's level. In this case, the team bonus is the percentage obtained of the r
 4. Next, the program gets each player's individual bonus. This is done by getting the percentage of 
 the relation between the goals made by the player and the goals required given its level. 
 
-| Nivel        | Goles/Mes        
+| Nivel        | Goles/Mes |
 | ------------- |:-------------:| 
 | Cuauh     | 20 |
 
-| Jugador        | Nivel | Goles anotados/ Goles requeridos        
-| ------------- |:-------------:| | -------------|
+| Jugador        | Nivel | Goles anotados/ Goles requeridos |    
+| ------------- |:-------------:| -------------|
 | Luis     | Cuauh | 19/20 |
 
 In the above example, Luis has made 19 goals but his level required him to make 20, so Luis individual bonus percentage is 95.
