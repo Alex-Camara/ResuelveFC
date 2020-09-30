@@ -10,8 +10,7 @@ MENSAJE_ENTRADA_NO_JSON = "La cadena ingresada no es un JSON v\xC3\xA1lido...".f
 MENSAJE_ENTRADA_INTEGER_NO_JSON = "debes ingresar un JSON v\xC3\xA1lido, no un numero...".freeze
 MENSAJE_EQUIPO_JSON_VACIO = 'el json que indrodujiste no tiene nigun jugador...'.freeze
 
-# {"jugadores":[{  "nombre":"Juan Perez","nivel":"C","goles":10,"sueldo":50000,"bono":25000,"sueldo_completo":null,"equipo":"rojo"},{  "nombre":"EL Cuauh","nivel":"Cuauh","goles":30,"sueldo":100000,"bono":30000,"sueldo_completo":null,"equipo":"azul"},{"nombre":"Cosme Fulanito","nivel":"A","goles":7,"sueldo":20000,"bono":10000,"sueldo_completo":null,"equipo":"azul"},{"nombre":"El Rulo","nivel":"B","goles":9,"sueldo":30000,"bono":15000,"sueldo_completo":null,"equipo":"rojo"}]}
-
+# @return [Boolean] whether to continue or not the input asking.
 repetir_input = true
 
 loop do

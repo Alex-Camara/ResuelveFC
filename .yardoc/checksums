@@ -1,0 +1,5 @@
+lib/main.rb 1561a38761a07df5cf259c104ee596af290cba1e
+lib/classes/Nivel.rb 3eea42f4308a478c063f4fce99bbc23a866a299b
+lib/classes/Equipo.rb dc0ed6ee400dad0e070f83d8e7e023f8d54a9ea2
+lib/classes/Jugador.rb 609dbfb5ea2da9f5b17c7b239e0be914b1fb756b
+lib/modules/JSON_utilities.rb 4bf92554e6df6a57d1aeac00282d2796142e36fb
