@@ -63,15 +63,15 @@ In the above example, Luis has made 19 goals but his level required him to make 
 
 5. The program then gets the percentages mean and applies it to the player's bonus. 
 
-Luis has a bonus of 10_000
-The percentage mean is of 95.5
-the 95.5 of 10_000 is 9_550
+* Luis has a bonus of 10_000
+* The percentage mean is of 95.5
+* the 95.5 of 10_000 is 9_550
 
 6. Now the program gets the total amount taking the base salary and adding up the calculated bonus. 
 
-Luis has a base salary of 50_000
-Luis has a calculated bonus of 9_550
-Luis total salary is of 59_550
+* Luis has a base salary of 50_000
+* Luis has a calculated bonus of 9_550
+* Luis total salary is of 59_550
 
 7. Once the program has got all the player's total payments, it converts the resulting array in a JSON and displays it to the user. 
 
