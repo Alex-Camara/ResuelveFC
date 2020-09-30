@@ -56,7 +56,7 @@ the relation between the goals made by the player and the goals required given i
 | Cuauh     | 20 |
 
 | Jugador        | Nivel | Goles anotados/ Goles requeridos        
-| ------------- |:-------------:| 
+| ------------- |:-------------:| | -------------|
 | Luis     | Cuauh | 19/20 |
 
 In the above example, Luis has made 19 goals but his level required him to make 20, so Luis individual bonus percentage is 95.
