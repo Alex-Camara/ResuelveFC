@@ -19,7 +19,7 @@ The process performed by the program is detailed next:
 
 1. First, the program ask the user for a JSON input string compliant with the fomart given below.
 
-{"jugadores": [
+`{"jugadores": [
     {"nombre": String,
      "nivel": String,
      "goles": Integer Number,
@@ -27,7 +27,7 @@ The process performed by the program is detailed next:
      "bono": Number,
      "sueldo_completo": Nil,
      "equipo": String}
-]}
+]}`
 
 2. Afterwards, the program takes the input and converts it to a valid JSON, once that's done it proceeds to extract the football teams with the corresponding players from the JSON. **Note**: *If the input is not a valid JSON or the JSON is empty, the program will repeat the request until a valid JSON is provided.*
 3. The program then calculates the team bonus percentage given the following: 
@@ -88,4 +88,4 @@ Install deps: `gem install bundler && bundle install`.
 
 Run `bundle exec rake test` to run the tests, or `bundle exec rake run` to run the program.
 
-Read de available documentation click [here](https://htmlpreview.github.io/?https://github.com/Alex-Camara/ResuelveFC/blob/master/doc/index.html)
+Read de available **documentation** click [here](https://htmlpreview.github.io/?https://github.com/Alex-Camara/ResuelveFC/blob/master/doc/index.html)
