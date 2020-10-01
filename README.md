@@ -10,6 +10,11 @@ account the following:
 * The total goals made by the player in contrast with the goals required by the player's level
 * The player's team performance
 
+The UML class diagram based on the scope of the program is shown below:
+
+![alt text](https://github.com/Alex-Camara/ResuelveFC/blob/master/doc/diagrams/class_diagram.png "ResuelveFC Class Diagram")
+
+
 The process performed by the program is detailed next:
 
 1. First, the program ask the user for a JSON input string compliant with the fomart given below.
@@ -82,3 +87,5 @@ In the above example, Luis has made 19 goals but his level required him to make 
 Install deps: `gem install bundler && bundle install`.  
 
 Run `bundle exec rake test` to run the tests, or `bundle exec rake run` to run the program.
+
+Read de available documentation click [here](https://htmlpreview.github.io/?https://github.com/Alex-Camara/ResuelveFC/blob/master/doc/index.html)
